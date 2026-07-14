@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase 2 - Gemini en Workspace, Agentes y Código con IA | Liceo San Nicolás</title>
+  <meta name="description" content="Segunda clase de Inteligencia Artificial: Gemini en Google Workspace, agentes de IA, programación con IA y ejercicios prácticos.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: var(--accent-soft); border-radius: var(--radius-sm); padding: 8px;">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="var(--accent-dark)" stroke-width="1.5"/>
+          <path d="M12 7V17M7 12H17M9.5 9.5L14.5 14.5M14.5 9.5L9.5 14.5" stroke="var(--accent-dark)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="var(--accent-dark)"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">Liceo San Nicolás</span>
+          <span class="brand-sub">Clase de IA · Tecn. en Industria 4.0</span>
+        </div>
+      </a>
+
+      <div class="navbar-nav" id="main-nav">
+        <a href="clase1.html" class="nav-link">Clase 1</a>
+        <a href="clase2.html" class="nav-link active">Clase 2</a>
+        <a href="../evaluacion.html" class="nav-link">Evaluación</a>
+      </div>
+
+      <div class="navbar-actions">
+        <button class="theme-toggle" aria-label="Cambiar tema" title="Cambiar entre tema claro y oscuro">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO DE CLASE -->
+  <section class="hero" style="min-height: 70vh; padding-top: 100px;">
+    <div class="hero-bg" style="background: radial-gradient(circle at 20% 30%, var(--accent-soft), transparent 40%), radial-gradient(circle at 80% 70%, var(--info-soft), transparent 40%);"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span style="font-size: 1.2rem;">🚀</span>
+        Clase 2 · Tecnologías en la Industria 4.0
+      </div>
+      <h1 class="hero-title display" style="font-size: clamp(2rem, 4vw, 3.2rem);">
+        Gemini en Workspace, <span class="accent">Agentes</span> y Código con IA
+      </h1>
+      <p class="body-lg" style="margin-bottom: var(--space-xl);">
+        Hoy llevamos la IA a la acción: productividad en Google Workspace, agentes que trabajan por nosotros y programación asistida por inteligencia artificial.
+      </p>
+    </div>
+  </section>
+
+  <!-- REPASO RÁPIDO -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">🔄</div>
+          <h3>Repaso rápido de la Clase 1</h3>
+        </div>
+        <div class="card-body">
+          <p>Antes de entrar en materia, recordemos tres ideas clave:</p>
+          <ol>
+            <li>La IA es una herramienta que imita capacidades humanas; <strong>no piensa ni siente</strong>.</li>
+            <li>La <strong>IA generativa</strong> crea contenido nuevo: texto, imagen, audio, video, código.</li>
+            <li>Un buen prompt usa la fórmula <strong>Rol + Contexto + Objetivo</strong>.</li>
+          </ol>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🎯 Dinámica: "Prompt relámpago"</h4>
+          <p>En 3 minutos, escribe en Gemini un prompt usando R + C + O sobre cualquier tema de Tecnología en Industria 4.0 (robótica, automatización, IoT, sostenibilidad). Comparte tu resultado con un compañero y den feedback mutuo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 1: GEMINI EN WORKSPACE -->
+  <section class="section section-sm" style="background: var(--bg-tertiary);">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon" style="font-size: 1.2rem; font-weight: 800; color: var(--accent-dark);">G</div>
+          <h3>Tu espacio de trabajo cobra vida</h3>
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>Gemini en Google Workspace</strong> no es un chatbot aparte: está integrado directamente en Gmail, Docs, Sheets, Slides y Meet. Puedes pedirle cosas sin salir de la aplicación donde estás trabajando.
+          </p>
+
+          <div class="media-frame">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&auto=format&fit=crop" alt="Personas colaborando con computadores" loading="lazy">
+            <div class="media-caption">Gemini transforma la forma en que colaboramos en documentos, hojas y correos.</div>
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">📧 Gmail</h4>
+          <ul>
+            <li><strong>Redactar:</strong> "Escribe un correo al profesor pidiendo una extensión de plazo para el proyecto grupal".</li>
+            <li><strong>Resumir hilos:</strong> convierte 20 correos de un proyecto en 5 puntos clave.</li>
+            <li><strong>Cambiar tono:</strong> transforma un mensaje informal en uno profesional.</li>
+          </ul>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">📝 Google Docs</h4>
+          <ul>
+            <li><strong>Ayúdame a escribir:</strong> genera borradores completos desde una descripción.</li>
+            <li><strong>Reformular:</strong> resume, amplía, simplifica o formaliza selecciones de texto.</li>
+            <li><strong>Corrección:</strong> revisa ortografía, gramática y claridad.</li>
+          </ul>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">📊 Google Sheets</h4>
+          <ul>
+            <li><strong>Fórmulas en lenguaje natural:</strong> "calcula el promedio de las notas de la columna B".</li>
+            <li><strong>Análisis:</strong> "¿cuál es la tendencia de ventas de los últimos 6 meses?".</li>
+            <li><strong>Clasificación:</strong> organiza datos automáticamente en categorías.</li>
+          </ul>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🎨 Google Slides</h4>
+          <ul>
+            <li><strong>Crear presentaciones:</strong> a partir de un tema o de un documento de Docs.</li>
+            <li><strong>Generar imágenes:</strong> ilustraciones directamente en las diapositivas.</li>
+            <li><strong>Notas del presentador:</strong> sugerencias de lo que decir en cada slide.</li>
+          </ul>
+
+          <div class="alert-box alert-info">
+            <strong>🔑 El comando "@":</strong> En Gemini puedes usar el comando @ para acceder directamente a Drive o Gmail. Por ejemplo: "Resume los correos de @Gmail de la última semana sobre el proyecto escolar" o "Analiza el documento @Drive 'Planificación Anual'".
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🔬 Deep Research</h4>
+          <p>
+            Gemini puede realizar <strong>investigaciones profundas</strong> sobre un tema, buscando información, contrastando fuentes y generando reportes estructurados con citas. Es ideal para trabajos de investigación escolar, pero siempre debes revisar las fuentes originales.
+          </p>
+
+          <div class="alert-box alert-success">
+            <strong>✅ Ejemplo práctico:</strong> "@Drive resume los 3 documentos sobre energías renovables y dame una tabla comparativa con ventajas y desventajas."
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🎯 Dinámica: "Adiós a la hoja en blanco"</h4>
+          <p>En Google Docs, escribe una idea breve para un trabajo (por ejemplo, "impacto de la automatización en la industria textil"). Usa Gemini para generar un borrador. Luego, en parejas, comparen: ¿qué partes son útiles? ¿Qué deberían reescribir?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 2: AGENTES DE IA -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">🕵️</div>
+          <h3>El año de los Agentes de IA</h3>
+        </div>
+        <div class="card-body">
+          <p>
+            Si los chatbots son asistentes que responden cuando les hablamos, los <strong>agentes de IA</strong> son trabajadores digitales que pueden <strong>actuar de forma autónoma</strong>. No solo conversan: hacen cosas.
+          </p>
+
+          <div class="media-frame">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&auto=format&fit=crop" alt="Representación de agentes de IA" loading="lazy">
+            <div class="media-caption">Los agentes de IA perciben, razonan y actúan para cumplir objetivos.</div>
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">¿Qué puede hacer un agente?</h4>
+          <ul>
+            <li>Recibir un objetivo en lenguaje natural.</li>
+            <li>Buscar información en internet, bases de datos o documentos.</li>
+            <li>Tomar decisiones y planificar pasos.</li>
+            <li>Usar otras herramientas (correo, calendario, hojas de cálculo).</li>
+            <li>Aprender de sus errores y mejorar.</li>
+          </ul>
+
+          <div class="alert-box alert-info">
+            <strong>🤖 Analogía:</strong> Un chatbot es como un recepcionista que responde preguntas. Un agente es como un asistente personal que, además de responder, agenda tus reuniones, compra tus pasajes y organiza tu correo.
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Ejemplos reales de agentes</h4>
+          <table style="width: 100%; border-collapse: collapse; margin: var(--space-md) 0;">
+            <thead>
+              <tr style="background: var(--accent-soft);">
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Área</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Agente</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Salud</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Asistente virtual médico</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Evalúa síntomas, agenda citas y recuerda medicamentos</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Finanzas</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Agente de trading</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Analiza el mercado y ejecuta operaciones en segundos</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Programación</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Claude Code / Devin</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Edita archivos, ejecuta pruebas y despliega aplicaciones</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Transporte</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Vehículo autónomo</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Percibe el entorno y toma decisiones de conducción</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="alert-box alert-warning">
+            <strong>⚠️ Supervisión humana:</strong> Los agentes autónomos requieren límites claros. Siempre debe haber una persona responsable de aprobar sus acciones importantes.
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🎯 Dinámica: "Diseña un agente"</h4>
+          <p>En grupos, imaginen un agente de IA que ayude en el Liceo San Nicolás. Respondan:</p>
+          <ul>
+            <li>¿Qué problema resolvería?</li>
+            <li>¿Qué información necesitaría?</li>
+            <li>¿Qué acciones realizaría?</li>
+            <li>¿Qué riesgos tendría?</li>
+          </ul>
+          <p>Compartan sus ideas con el curso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 3: CÓDIGO CON IA -->
+  <section class="section section-sm" style="background: var(--bg-tertiary);">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">💻</div>
+          <h3>Código con IA: de la idea al programa</h3>
+        </div>
+        <div class="card-body">
+          <p>
+            La programación es una de las áreas donde la IA generativa más impacta. Herramientas como <strong>GitHub Copilot</strong>, <strong>Cursor</strong>, <strong>Gemini Code Assist</strong> y <strong>Claude Code</strong> actúan como compañeros de programación que escriben, explican y corrigen código.
+          </p>
+
+          <div class="media-frame">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&auto=format&fit=crop" alt="Código en pantalla" loading="lazy">
+            <div class="media-caption">La IA puede generar código, pero tú decides si es correcto y útil.</div>
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">¿Qué puede hacer la IA con código?</h4>
+          <ul>
+            <li><strong>Autocompletar:</strong> sugiere la siguiente línea mientras escribes.</li>
+            <li><strong>Generar funciones:</strong> a partir de una descripción en español.</li>
+            <li><strong>Explicar:</strong> "¿qué hace este código?".</li>
+            <li><strong>Depurar:</strong> encuentra errores y propone soluciones.</li>
+            <li><strong>Traducir:</strong> convierte código de un lenguaje a otro.</li>
+            <li><strong>Testear:</strong> crea pruebas automáticas.</li>
+          </ul>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Principales herramientas</h4>
+          <table style="width: 100%; border-collapse: collapse; margin: var(--space-md) 0;">
+            <thead>
+              <tr style="background: var(--accent-soft);">
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Herramienta</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Descripción</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Ideal para</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">GitHub Copilot</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Asistente de código integrado en editores populares</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Programación diaria en equipos</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Cursor</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Editor de código diseñado para IA</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Proyectos personales y aprendizaje</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Gemini Code Assist</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Asistente de Google para desarrolladores</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Ecosistema Google y análisis de código</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Claude Code</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Agente de IA en la terminal</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Tareas complejas de desarrollo</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="alert-box alert-warning">
+            <strong>⚠️ Tú sigues siendo el piloto:</strong> La IA puede sugerir código, pero tú debes entenderlo, revisarlo y decidir si cumple lo que necesitas. Un código incorrecto puede causar errores graves.
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🌐 Plataformas gratuitas para practicar</h4>
+          <p>Para hacer los ejercicios de código no necesitas instalar nada. Puedes usar estas plataformas online gratuitas:</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-md); margin: var(--space-md) 0;">
+            <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border);">
+              <strong>🚀 Replit</strong><br>
+              <a href="https://replit.com" target="_blank" rel="noopener">replit.com</a><br>
+              <span class="text-muted">Editor online para Python, JavaScript, HTML/CSS y más. Cuenta gratuita, colaboración en tiempo real.</span>
+            </div>
+            <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border);">
+              <strong>🎨 CodePen</strong><br>
+              <a href="https://codepen.io" target="_blank" rel="noopener">codepen.io</a><br>
+              <span class="text-muted">Ideal para practicar HTML, CSS y JavaScript en el navegador.</span>
+            </div>
+            <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border);">
+              <strong>📓 Google Colab</strong><br>
+              <a href="https://colab.research.google.com" target="_blank" rel="noopener">colab.research.google.com</a><br>
+              <span class="text-muted">Cuadernos de Python en la nube. Perfecto para IA, datos y automatización.</span>
+            </div>
+            <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border);">
+              <strong>⚡ StackBlitz</strong><br>
+              <a href="https://stackblitz.com" target="_blank" rel="noopener">stackblitz.com</a><br>
+              <span class="text-muted">Entorno para aplicaciones web modernas. Rápido y sin instalación.</span>
+            </div>
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🎯 Dinámica: "Tu primer programa con IA" (usando CodePen)</h4>
+          <p>
+            <a href="https://codepen.io/pen/" target="_blank" rel="noopener">CodePen</a> es la forma más rápida de probar código web: no necesitas crear cuenta ni proyecto. Solo abres la página y escribes. El docente proyecta el proceso paso a paso:
+          </p>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Paso 1: Abrir CodePen</h4>
+          <ol>
+            <li>En tu navegador, entra a <a href="https://codepen.io/pen/" target="_blank" rel="noopener">codepen.io/pen</a>.</li>
+            <li>Verás tres paneles: <strong>HTML</strong> (izquierda), <strong>CSS</strong> (centro) y <strong>JS</strong> (derecha).</li>
+            <li>Abajo verás el <strong>Resultado</strong> en tiempo real.</li>
+          </ol>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Paso 2: Pedir el código a Gemini</h4>
+          <p>En Gemini escribe este prompt:</p>
+          <blockquote style="background: var(--bg-tertiary); padding: var(--space-md); border-left: 4px solid var(--accent); border-radius: var(--radius-sm); font-family: monospace;">
+            "Crea una página web simple con un botón que cambie de color al hacer clic. Dame el código separado en tres bloques: HTML, CSS y JavaScript."
+          </blockquote>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Paso 3: Copiar el código en CodePen</h4>
+          <ol>
+            <li>Copia la parte <strong>HTML</strong> de la respuesta de Gemini y pégala en el panel <strong>HTML</strong> de CodePen.</li>
+            <li>Copia la parte <strong>CSS</strong> y pégala en el panel <strong>CSS</strong>.</li>
+            <li>Copia la parte <strong>JavaScript</strong> y pégala en el panel <strong>JS</strong>.</li>
+          </ol>
+          <p>Verás el resultado automáticamente en la zona inferior.</p>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Paso 4: Iterar y experimentar</h4>
+          <p>Ahora pídele a Gemini que mejore tu botón:</p>
+          <blockquote style="background: var(--bg-tertiary); padding: var(--space-md); border-left: 4px solid var(--accent); border-radius: var(--radius-sm); font-family: monospace;">
+            "Ahora haz que el botón cambie entre 3 colores (rojo, azul, verde) cada vez que hago clic. Dame solo el código JavaScript actualizado."
+          </blockquote>
+          <p>Reemplaza solo el código <strong>JS</strong> en CodePen y observa el cambio inmediato.</p>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Paso 5: Guardar y compartir (opcional)</h4>
+          <ol>
+            <li>Haz clic en <strong>Save</strong> (arriba a la derecha).</li>
+            <li>CodePen te pedirá crear una cuenta gratuita (puedes usar tu cuenta de Google).</li>
+            <li>Una vez guardado, obtienes un <strong>enlace único</strong> que puedes compartir con tu profesor o compañeros.</li>
+          </ol>
+
+          <div class="alert-box alert-success">
+            <strong>💡 Tip del docente:</strong> Si el código no funciona, revisa que no hayas copiado las etiquetas <code>&lt;style&gt;</code> o <code>&lt;script&gt;</code> dentro de CodePen. En CodePen cada panel ya es su propio lenguaje, no necesitas esas etiquetas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 4: EJERCICIOS PRÁCTICOS -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">🏋️</div>
+          <h3>Ejercicios prácticos con Gemini</h3>
+        </div>
+        <div class="card-body">
+          <p>Realiza estos ejercicios en tu computador. Puedes elegir los que más te interesen según tu nivel.</p>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Bloque A: Lenguaje Natural</h4>
+          <ol>
+            <li><strong>Master Prompt:</strong> Crea un prompt usando R + C + O para que Gemini te ayude a planificar un trabajo sobre Industria 4.0. Pídele el resultado en formato tabla con pasos, recursos y plazos.</li>
+            <li><strong>Análisis de correo:</strong> Pega un correo largo en Gemini y pídele: "Resume esto en 3 puntos clave, identifica las acciones pendientes y sugiere una respuesta corta."</li>
+            <li><strong>Comparador:</strong> Pide a Gemini una tabla comparativa entre "automatización tradicional" e "Industria 4.0" con ventajas, desventajas y ejemplos.</li>
+            <li><strong>Tono adaptable:</strong> Escribe un mensaje de reclamo y pídele a Gemini que lo reescriba en tono formal, informal y sarcástico (este último solo para analizar el estilo).</li>
+          </ol>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Bloque B: Código con IA</h4>
+          <p>Para estos ejercicios usa <a href="https://codepen.io/pen/" target="_blank" rel="noopener">CodePen</a>.</p>
+          <ol>
+            <li><strong>Botón interactivo:</strong> Pídele a Gemini: "Crea una página web con un botón que cambie de texto cada vez que hago clic. Dame HTML, CSS y JS separados." Pruébalo en CodePen.</li>
+            <li><strong>Contador de clics:</strong> "Crea un contador que aumente cada vez que hago clic en un botón. Muestra el número en la pantalla."</li>
+            <li><strong>Lista de tareas:</strong> "Crea una mini lista de tareas donde pueda escribir algo en un cuadro de texto, agregarlo con un botón y verlo en una lista."</li>
+            <li><strong>Mejora iterativa:</strong> Toma uno de los códigos anteriores y pídele a Gemini que agregue un nuevo feature (por ejemplo, que el contador pueda reiniciarse o que las tareas se puedan eliminar).</li>
+          </ol>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Bloque C: Modo Creativo — Crea tu propio juego o app</h4>
+          <p>Usa <a href="https://codepen.io/pen/" target="_blank" rel="noopener">CodePen</a> y Gemini para crear algo único. Elige una de estas ideas o inventa la tuya:</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); margin: var(--space-md) 0;">
+            <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border); border-left: 4px solid var(--accent);">
+              <strong>🎮 1. Piedra, Papel o Tijera</strong><br>
+              <span class="text-muted">Un juego donde tú eliges una opción, la computadora elige otra al azar, y gana el mejor de 3 rondas. Muestra el resultado en pantalla.</span><br>
+              <em>Prompt sugerido: "Crea un juego de piedra, papel o tijera en HTML/CSS/JS. El jugador hace clic en un botón, la computadora elige al azar, y se muestra quién ganó. Dame el código separado en HTML, CSS y JS."</em>
+            </div>
+            <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border); border-left: 4px solid var(--info);">
+              <strong>🎯 2. Adivina el Número</strong><br>
+              <span class="text-muted">La computadora piensa un número del 1 al 100. Tú escribes tu intento y te dice si es mayor, menor o correcto. Cuenta cuántos intentos usaste.</span><br>
+              <em>Prompt sugerido: "Crea un juego de adivinar el número del 1 al 100. El usuario escribe un número, el programa dice 'mayor', 'menor' o '¡correcto!'. Usa HTML, CSS y JS separados."</em>
+            </div>
+            <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border); border-left: 4px solid var(--success);">
+              <strong>🧮 3. Calculadora Visual</strong><br>
+              <span class="text-muted">Una calculadora con botones del 0 al 9, operaciones básicas y una pantalla que muestra el resultado. Estilo moderno con colores.</span><br>
+              <em>Prompt sugerido: "Crea una calculadora visual con botones del 0 al 9 y operaciones +, -, *, /. Que se vea moderna con colores. HTML, CSS y JS separados."</em>
+            </div>
+            <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border); border-left: 4px solid var(--warning);">
+              <strong>🎨 4. Generador de Paletas de Colores</strong><br>
+              <span class="text-muted">Un botón genera 5 colores aleatorios y los muestra en cuadrados. Útil para diseñadores y proyectos escolares.</span><br>
+              <em>Prompt sugerido: "Crea un generador de paletas de colores. Cada vez que hago clic en un botón, genera 5 colores aleatorios y los muestra en cuadrados con su código hexadecimal. HTML, CSS y JS."</em>
+            </div>
+            <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border); border-left: 4px solid var(--danger);">
+              <strong>⏱️ 5. Temporizador Pomodoro</strong><br>
+              <span class="text-muted">Un temporizador de 25 minutos para estudiar, con botones de iniciar, pausar y reiniciar. Cambia de color cuando termina.</span><br>
+              <em>Prompt sugerido: "Crea un temporizador de 25 minutos estilo Pomodoro. Botones de iniciar, pausar y reiniciar. Que cambie de color cuando llegue a 0. HTML, CSS y JS."</em>
+            </div>
+          </div>
+
+          <div class="alert-box alert-success">
+            <strong>🚀 Desafío final:</strong> Elige una idea, pídesela a Gemini con un prompt detallado (usa R + C + O), pruébala en CodePen y luego pídele que le agregue una función extra. Comparte tu enlace de CodePen con el curso.
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Bloque D: Pensamiento crítico</h4>
+          <ol>
+            <li>Pídele a Gemini que resuma un tema complejo. Luego pregúntale: "¿Qué partes de tu respuesta podrían estar incompletas o ser discutibles?"</li>
+            <li>Pide una opinión sobre un tema polémico (por ejemplo, "¿deberían los coches ser autónomos?"). Analiza si la respuesta es equilibrada o tiene sesgos.</li>
+            <li>Pide a Gemini que genere una imagen o un texto y luego evalúa si infringe derechos de autor o ética profesional.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 5: ÉTICA -->
+  <section class="section section-sm" style="background: var(--bg-tertiary);">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">⚖️</div>
+          <h3>Ética, limitaciones y el futuro</h3>
+        </div>
+        <div class="card-body">
+          <p>La IA es una herramienta poderosa, pero no está exenta de riesgos. Usarla bien significa conocer sus límites.</p>
+
+          <div class="media-frame">
+            <img src="https://images.unsplash.com/photo-1504384308090-c54be3855833?w=1200&auto=format&fit=crop" alt="Persona reflexionando frente a pantallas" loading="lazy">
+            <div class="media-caption">El uso responsable de la IA requiere pensamiento crítico y supervisión humana.</div>
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Principales riesgos</h4>
+          <ul>
+            <li><strong>Alucinaciones:</strong> la IA puede inventar datos, citas o hechos.</li>
+            <li><strong>Sesgos:</strong> si los datos de entrenamiento son sesgados, la IA reproduce esos sesgos.</li>
+            <li><strong>Privacidad:</strong> no debemos ingresar datos personales sensibles en herramientas públicas.</li>
+            <li><strong>Dependencia:</strong> usar la IA para todo puede debilitar nuestras propias habilidades de pensamiento.</li>
+            <li><strong>Desinformación:</strong> la IA puede generar textos, imágenes y videos realistas que se usan para engañar.</li>
+          </ul>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Buenas prácticas</h4>
+          <ul>
+            <li>Verifica la información importante con fuentes confiables.</li>
+            <li>Usa la IA como apoyo, no como reemplazo de tu aprendizaje.</li>
+            <li>Sé transparente cuando uses IA en un trabajo escolar.</li>
+            <li>Revisa los posibles sesgos en las respuestas.</li>
+            <li>No compartas contraseñas, datos personales ni información institucional sensible.</li>
+          </ul>
+
+          <div class="alert-box alert-info">
+            <strong>🔮 El futuro:</strong> La IA seguirá evolucionando hacia agentes más autónomos, herramientas más integradas y modelos más especializados. La habilidad más valiosa no será "saber de IA", sino "saber usar la IA con criterio".
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🎯 Dinámica de cierre: "Mi compromiso con la IA"</h4>
+          <p>Cada estudiante escribe en una nota adhesiva (física o digital) una regla personal que seguirá al usar IA. Algunas ideas:</p>
+          <ul>
+            <li>"Siempre revisaré los datos importantes."</li>
+            <li>"Usaré la IA para aprender, no para copiar."</li>
+            <li>"Protegeré mi información personal."</li>
+          </ul>
+          <p>Se comparten voluntariamente en el curso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVEGACIÓN -->
+  <section class="section section-sm">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+        <a href="clase1.html" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Clase anterior
+        </a>
+        <a href="../evaluacion.html" class="btn btn-primary">
+          Ir a la evaluación
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo" style="background: var(--accent-soft); border-radius: var(--radius-md); padding: 10px;">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="var(--accent-dark)" stroke-width="1.5"/>
+          <path d="M12 7V17M7 12H17M9.5 9.5L14.5 14.5M14.5 9.5L9.5 14.5" stroke="var(--accent-dark)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="var(--accent-dark)"/>
+        </svg>
+        <div class="footer-brand">Liceo San Nicolás</div>
+        <div class="footer-info">
+          Clase de Inteligencia Artificial · Tecn. en Industria 4.0 · Clase 2<br>
+          <strong>Prof. Christopher Ruiz</strong>
+        </div>
+        <div class="footer-credit">
+          Material educativo para uso institucional.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/utils.js"></script>
+</body>
+</html>

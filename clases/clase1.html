@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase 1 - Fundamentos de la IA y el arte del Prompt | Liceo San Nicolás</title>
+  <meta name="description" content="Primera clase de Inteligencia Artificial: fundamentos, IA generativa, Gemini y técnicas avanzadas de prompting.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: var(--accent-soft); border-radius: var(--radius-sm); padding: 8px;">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="var(--accent-dark)" stroke-width="1.5"/>
+          <path d="M12 7V17M7 12H17M9.5 9.5L14.5 14.5M14.5 9.5L9.5 14.5" stroke="var(--accent-dark)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="var(--accent-dark)"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">Liceo San Nicolás</span>
+          <span class="brand-sub">Clase de IA · Tecn. en Industria 4.0</span>
+        </div>
+      </a>
+
+      <div class="navbar-nav" id="main-nav">
+        <a href="clase1.html" class="nav-link active">Clase 1</a>
+        <a href="clase2.html" class="nav-link">Clase 2</a>
+        <a href="../evaluacion.html" class="nav-link">Evaluación</a>
+      </div>
+
+      <div class="navbar-actions">
+        <button class="theme-toggle" aria-label="Cambiar tema" title="Cambiar entre tema claro y oscuro">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO DE CLASE -->
+  <section class="hero" style="min-height: 70vh; padding-top: 100px;">
+    <div class="hero-bg" style="background: radial-gradient(circle at 20% 30%, var(--accent-soft), transparent 40%), radial-gradient(circle at 80% 70%, var(--info-soft), transparent 40%);"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span style="font-size: 1.2rem;">🧠</span>
+        Clase 1 · Tecnologías en la Industria 4.0
+      </div>
+      <h1 class="hero-title display" style="font-size: clamp(2rem, 4vw, 3.2rem);">
+        Fundamentos de la IA y el <span class="accent">arte del Prompt</span>
+      </h1>
+      <p class="body-lg" style="margin-bottom: var(--space-xl);">
+        Pasamos de usar la computadora como una herramienta pasiva a tener un <strong>copiloto inteligente</strong>. En esta clase entenderás qué es la IA, cómo funciona la IA generativa y cómo hablarle a Gemini para sacarle el máximo provecho.
+      </p>
+    </div>
+  </section>
+
+  <!-- BLOQUE 1: TU COMPUTADORA ES UN COPILOTO -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">✈️</div>
+          <h3>¿Tu computadora es una herramienta o un copiloto?</h3>
+        </div>
+        <div class="card-body">
+          <div class="media-frame">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&auto=format&fit=crop" alt="Persona trabajando con laptop" loading="lazy">
+            <div class="media-caption">La IA no reemplaza al humano: lo potencia. Imagen: Unsplash.</div>
+          </div>
+
+          <p>
+            Antes, la computadora era como un martillo: tú le dabas una orden exacta y ella ejecutaba. Si no sabías qué botón apretar, no pasaba nada. Hoy estamos entrando en la era de la <strong>Inteligencia Aumentada</strong>: la máquina entiende qué queremos, propone opciones, crea borradores y nos ayuda a pensar.
+          </p>
+          <p>
+            No se trata de que la IA reemplace a las personas, sino de <strong>potenciar nuestras capacidades</strong>. Un estudiante con IA bien usada puede aprender más rápido, un médico puede diagnosticar con más información, un ingeniero puede diseñar con menos errores.
+          </p>
+
+          <div class="alert-box alert-info">
+            <strong>💡 Dato:</strong> Se estima que el 90% del contenido digital producido en 2026 será asistido por IA de alguna forma. No se trata de un futuro lejano: ya estamos ahí.
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🎯 Dinámica: "¿Quién lo hace?"</h4>
+          <p>El docente lee en voz alta situaciones cotidianas y los estudiantes levantan la mano si creen que detrás hay IA:</p>
+          <ul>
+            <li>La playlist semanal de Spotify que parece leer tu mente.</li>
+            <li>El filtro que detecta tu rostro en la cámara del celular.</li>
+            <li>El corrector ortográfico que predice tu siguiente palabra.</li>
+            <li>La ruta que evita el taco en Google Maps.</li>
+            <li>Una pintura creada por una persona con pincel y óleo.</li>
+          </ul>
+          <p><strong>Reflexión grupal:</strong> ¿En cuáles de esos ejemplos la IA toma decisiones por sí sola? ¿En cuáles solo sugiere?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 2: ¿QUÉ ES LA IA? -->
+  <section class="section section-sm" style="background: var(--bg-tertiary);">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">🤖</div>
+          <h3>¿Qué es realmente la Inteligencia Artificial?</h3>
+        </div>
+        <div class="card-body">
+          <p>
+            La <strong>Inteligencia Artificial</strong> es un campo de la computación dedicado a crear sistemas capaces de realizar tareas que, de hacerlas humanos, requerirían inteligencia: entender el lenguaje, reconocer imágenes, tomar decisiones, aprender de la experiencia, jugar ajedrez o conducir un vehículo.
+          </p>
+
+          <div class="media-frame">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop" alt="Representación abstracta de inteligencia artificial" loading="lazy">
+            <div class="media-caption">La IA combina matemáticas, datos y computación para resolver problemas complejos.</div>
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">El sueño de la máquina que piensa</h4>
+          <p>
+            En <strong>1950</strong>, el matemático británico <strong>Alan Turing</strong> publicó un artículo titulado "Computing Machinery and Intelligence", donde preguntó: <em>"¿Puede una máquina pensar?"</em>. Para responder, propuso el famoso <strong>Juego de la Imitación</strong>: si una máquina puede conversar de tal manera que un humano no distinga si es máquina o persona, entonces podemos decir que exhibe inteligencia.
+          </p>
+          <p>
+            Turing no pensaba en robots con emociones, sino en <strong>lógica y matemáticas puras</strong>. Su idea sentó las bases de lo que hoy llamamos IA.
+          </p>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">El despertar del gigante: Datos y Potencia</h4>
+          <div class="media-frame">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop" alt="Visualización de datos y Big Data" loading="lazy">
+            <div class="media-caption">Internet generó la materia prima de la IA: los datos.</div>
+          </div>
+          <p>
+            La IA existía desde mediados del siglo XX, pero durante décadas fue limitada. ¿Qué cambió? Dos cosas:
+          </p>
+          <ul>
+            <li><strong>Internet y el Big Data:</strong> millones de textos, imágenes, videos y audios disponibles para entrenar modelos.</li>
+            <li><strong>Potencia de computación:</strong> chips especializados (GPU y TPU) capaces de procesar cantidades masivas de información.</li>
+          </ul>
+          <p>
+            Antes los programadores escribían <strong>reglas explícitas</strong>: "si el cliente compra más de 5 veces, mostrarle descuento". Hoy le decimos a la computadora: <strong>"aprende tú mismo de los ejemplos"</strong>.
+          </p>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">IA Débil vs IA Fuerte</h4>
+          <table style="width: 100%; border-collapse: collapse; margin: var(--space-md) 0;">
+            <thead>
+              <tr style="background: var(--accent-soft);">
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Característica</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">IA Débil (Específica)</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">IA Fuerte (General)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Alcance</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Una sola tarea</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Cualquier tarea intelectual</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Ejemplo</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Siri, filtros de spam, recomendaciones de Netflix</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Solo existe en ciencia ficción</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Consciencia</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">No tiene</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Hipotética</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="alert-box alert-warning">
+            <strong>⚠️ Concepto clave:</strong> Toda la IA que usamos hoy es "débil" en el sentido técnico. No piensa, no siente y no tiene consciencia. Es una herramienta matemática muy sofisticada.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 3: DE ANALIZAR A CREAR -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">⚖️</div>
+          <h3>De analizar a crear: IA Tradicional vs IA Generativa</h3>
+        </div>
+        <div class="card-body">
+          <p>
+            Durante años, la IA se dedicó principalmente a <strong>analizar</strong>: clasificar correos como spam, reconocer rostros, predecir el clima, recomendar productos. Luego llegó la <strong>IA generativa</strong>, que no solo analiza: <strong>crea algo nuevo</strong>.
+          </p>
+
+          <div class="media-frame">
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&auto=format&fit=crop" alt="Red neuronal y generación de contenido" loading="lazy">
+            <div class="media-caption">La IA generativa aprende patrones de millones de ejemplos y produce contenido original.</div>
+          </div>
+
+          <table style="width: 100%; border-collapse: collapse; margin: var(--space-md) 0;">
+            <thead>
+              <tr style="background: var(--accent-soft);">
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">IA Tradicional</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">IA Generativa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Clasifica y predice</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Crea y diseña</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">"¿Esta foto es un perro o un gato?"</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">"Dibuja un perro astronauta en Marte"</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Filtro de spam, recomendaciones</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">ChatGPT, DALL-E, Gemini, Sora</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">¿Cómo funciona?</h4>
+          <p>Detrás de la magia hay dos grandes familias de modelos:</p>
+
+          <div class="diagram">
+            <div style="display: grid; gap: var(--space-md);">
+              <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border-left: 4px solid var(--accent);">
+                <strong>🧠 Modelos de lenguaje (Transformers)</strong><br>
+                Aprenden a predecir la siguiente palabra en una frase. Entrenados con millones de libros, artículos y páginas web, generan textos coherentes. Ejemplos: GPT-4o, Gemini 1.5 Pro, Claude.
+              </div>
+              <div style="padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--radius-md); border-left: 4px solid var(--info);">
+                <strong>🎨 Modelos de difusión (Diffusion)</strong><br>
+                Parten de ruido visual aleatorio y lo organizan poco a poco hasta formar una imagen guiada por una descripción. Ejemplos: DALL-E 3, Midjourney, Stable Diffusion, Imagen 3 de Google.
+              </div>
+            </div>
+            <div class="diagram-caption">Las dos grandes familias de modelos generativos actuales.</div>
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Ejemplos de IA generativa en acción</h4>
+          <ul>
+            <li><strong>Texto:</strong> redactar un correo formal, crear un guion, resumir un libro, escribir poesía.</li>
+            <li><strong>Imagen:</strong> crear ilustraciones, diseñar logotipos, generar fotos realistas.</li>
+            <li><strong>Audio:</strong> clonar voces, narrar audiolibros, componer música.</li>
+            <li><strong>Video:</strong> producir clips a partir de una descripción.</li>
+            <li><strong>Código:</strong> escribir programas, explicar errores, traducir entre lenguajes.</li>
+          </ul>
+
+          <div class="alert-box alert-warning">
+            <strong>⚠️ Cuidado con las alucinaciones:</strong> La IA generativa a veces inventa datos, referencias o hechos que suenan reales pero son falsos. Siempre debemos verificar la información importante.
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🎯 Dinámica: "Crítico vs Creador"</h4>
+          <p>En parejas, un estudiante pide a Gemini una explicación de un tema (por ejemplo, "¿qué es la fotosíntesis?") y el otro evalúa si la respuesta es correcta, completa y fácil de entender. Luego invierten roles.</p>
+          <p><strong>Pregunta para la clase:</strong> ¿Qué hace que una respuesta de IA sea confiable?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 4: GEMINI -->
+  <section class="section section-sm" style="background: var(--bg-tertiary);">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon" style="font-size: 1.2rem; font-weight: 800; color: var(--accent-dark);">G</div>
+          <h3>Gemini: el cerebro de Google a tu servicio</h3>
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>Gemini</strong> es la familia de modelos de IA generativa de Google. A diferencia de otros asistentes, fue diseñado desde el inicio como <strong>multimodal</strong>: puede entender y generar texto, imágenes, audio y código en una sola conversación.
+          </p>
+
+          <div class="media-frame">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&auto=format&fit=crop" alt="Robot y tecnología futurista" loading="lazy">
+            <div class="media-caption">Gemini integra texto, imagen, audio y código en un solo modelo.</div>
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Capacidades principales</h4>
+          <ul>
+            <li><strong>Responder preguntas complejas</strong> con explicaciones paso a paso.</li>
+            <li><strong>Resumir documentos extensos</strong> y convertirlos en listas o tablas.</li>
+            <li><strong>Generar ideas</strong> para proyectos, presentaciones o historias.</li>
+            <li><strong>Analizar imágenes:</strong> puedes subir una foto y preguntar qué contiene.</li>
+            <li><strong>Ayudar con matemáticas y programación.</strong></li>
+            <li><strong>Crear contenido en diferentes tonos y formatos.</strong></li>
+          </ul>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Gemini Flash vs Gemini Pro</h4>
+          <table style="width: 100%; border-collapse: collapse; margin: var(--space-md) 0;">
+            <thead>
+              <tr style="background: var(--accent-soft);">
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Modelo</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Fortaleza</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Ideal para</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Gemini Flash</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Velocidad y eficiencia</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Tareas rápidas, brainstorming, respuestas cortas</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Gemini Pro</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Razonamiento profundo y contexto largo</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Análisis complejos, código, investigación</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="alert-box alert-info">
+            <strong>🔑 Integración ecosistema:</strong> Gemini está conectado con Google Search, Drive, Gmail y otros servicios de Google. Esto significa que puede acceder a información actualizada y a tus propios documentos (si tú lo permites).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 5: EL ARTE DEL PROMPT -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">🎨</div>
+          <h3>El arte de susurrarle a las máquinas</h3>
+        </div>
+        <div class="card-body">
+          <p>
+            Un <strong>prompt</strong> es la instrucción que le das a un modelo de IA. La IA no es un buscador que "encuentra" respuestas; es un asistente al que le das órdenes. La calidad de tu entrada determina la calidad de la salida.
+          </p>
+
+          <div class="alert-box alert-info">
+            <strong>🧪 Regla de oro:</strong> Calidad de entrada = Calidad de salida. Un prompt vago produce una respuesta vaga. Un prompt detallado produce un resultado útil.
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">La fórmula del éxito: R + C + O</h4>
+          <p>Para obtener buenos resultados, estructura tu prompt con tres ingredientes:</p>
+
+          <div class="diagram">
+            <div class="pyramid">
+              <div class="pyramid-level l1">OBJETIVO: ¿Qué necesito?</div>
+              <div class="pyramid-level l2">CONTEXTO: ¿Qué sucede?</div>
+              <div class="pyramid-level l3">ROL: ¿Quién eres?</div>
+            </div>
+            <div class="diagram-caption">Fórmula R + C + O para prompts efectivos.</div>
+          </div>
+
+          <table style="width: 100%; border-collapse: collapse; margin: var(--space-md) 0;">
+            <thead>
+              <tr style="background: var(--accent-soft);">
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Ingrediente</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Descripción</th>
+                <th style="padding: var(--space-md); text-align: left; border: 1px solid var(--border);">Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);"><strong>Rol</strong></td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Quién debe interpretar la IA</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">"Actúa como un profesor de física"</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);"><strong>Contexto</strong></td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Situación, audiencia, nivel de detalle</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">"Estoy en 3° medio y necesito preparar una prueba"</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);"><strong>Objetivo</strong></td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">Qué quieres obtener</td>
+                <td style="padding: var(--space-md); border: 1px solid var(--border);">"Explícame la segunda ley de Newton con 3 ejemplos cotidianos"</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Control total: formato y restricciones</h4>
+          <p>Una vez que tienes R + C + O, puedes refinar el resultado pidiendo:</p>
+          <ul>
+            <li><strong>Formato:</strong> "Dame una tabla comparativa", "una lista numerada", "un párrafo", "código".</li>
+            <li><strong>Tono:</strong> "formal", "informal", "divertido", "académico", "para un niño de 10 años".</li>
+            <li><strong>Longitud:</strong> "máximo 5 líneas", "una página", "140 caracteres".</li>
+            <li><strong>Restricciones:</strong> "sin usar palabras técnicas", "incluye solo ejemplos chilenos", "evita repetir ideas".</li>
+          </ul>
+
+          <div class="alert-box alert-success">
+            <strong>✅ Ejemplo de prompt mejorado:</strong><br>
+            ❌ "Explica fotosíntesis"<br>
+            ✅ "Actúa como profesor de biología de enseñanza media. Explica la fotosíntesis a un estudiante de 14 años usando una analogía con una fábrica. Incluye una lista de 3 etapas y un ejemplo de planta común en Chile. Máximo 200 palabras."
+          </div>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">🎯 Ejercicio en clase: "De malo a brillante"</h4>
+          <p>En grupos de tres, tomen este prompt básico y mejórenlo usando R + C + O:</p>
+          <blockquote style="background: var(--bg-tertiary); padding: var(--space-md); border-left: 4px solid var(--accent); border-radius: var(--radius-sm);">
+            "Háblame de la energía solar."
+          </blockquote>
+          <p>Luego escríbanlo en Gemini y compartan cuál versión dio mejor resultado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 6: PRÁCTICA CON GEMINI -->
+  <section class="section section-sm" style="background: var(--bg-tertiary);">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">🛠️</div>
+          <h3>Ejercicios prácticos con Gemini: Lenguaje Natural</h3>
+        </div>
+        <div class="card-body">
+          <p>Abre <strong>Gemini</strong> en tu computador (gemini.google.com) y realiza los siguientes desafíos. El objetivo es practicar el control del lenguaje natural.</p>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Ejercicio 1: Explicar para diferentes audiencias</h4>
+          <p>Pídele a Gemini que explique el mismo concepto (por ejemplo, "qué es una red neuronal") para tres audiencias distintas:</p>
+          <ol>
+            <li>Un niño de 8 años.</li>
+            <li>Un compañero de clase.</li>
+            <li>Un ingeniero experto.</li>
+          </ol>
+          <p><strong>Reflexión:</strong> ¿Cómo cambian las palabras, las analogías y el nivel de detalle?</p>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Ejercicio 2: Transformar formato</h4>
+          <p>Copia un texto largo de una noticia o Wikipedia y pídele a Gemini que lo transforme:</p>
+          <ol>
+            <li>En una tabla comparativa.</li>
+            <li>En una lista de 5 puntos clave.</li>
+            <li>En un hilo de Twitter (X) de 3 tuits.</li>
+          </ol>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Ejercicio 3: Rollos creativos</h4>
+          <p>Usa Gemini para generar ideas para un proyecto escolar. Prueba prompts como:</p>
+          <ul>
+            <li>"Soy estudiante de Tecnología en Industria 4.0. Propón 5 ideas de proyectos que combinen sensores y sostenibilidad."</li>
+            <li>"Crea un guion de 1 minuto para un video explicando la automatización industrial."</li>
+          </ul>
+
+          <h4 class="heading-md" style="margin-top: var(--space-lg);">Ejercicio 4: Pensamiento crítico</h4>
+          <p>Pídele a Gemini una respuesta y luego desafíala:</p>
+          <ul>
+            <li>"¿Cuáles son las desventajas de tu respuesta anterior?"</li>
+            <li>"¿Qué información te falta para estar 100% seguro?"</li>
+            <li>"Da un contraejemplo."</li>
+          </ul>
+          <p>Esto te ayuda a detectar alucinaciones y a entender los límites de la IA.</p>
+
+          <div class="alert-box alert-success">
+            <strong>💡 Tip profesional:</strong> Cuando Gemini te da una respuesta buena, pídele que la mejore. La iteración es clave: "hazlo más corto", "agrega un ejemplo", "cámbiale el tono a más formal".
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 7: CIERRE -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="card reveal">
+        <div class="card-header">
+          <div class="card-icon">🔑</div>
+          <h3>Claves para recordar</h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>La IA es una herramienta matemática que imita capacidades humanas; no piensa ni siente.</li>
+            <li>La IA generativa crea contenido nuevo a partir de patrones aprendidos.</li>
+            <li>Gemini es multimodal: entiende texto, imagen, audio y código.</li>
+            <li>Un buen prompt incluye <strong>Rol + Contexto + Objetivo</strong>.</li>
+            <li>Siempre verifica la información importante y usa la IA con pensamiento crítico.</li>
+          </ul>
+
+          <div class="alert-box alert-info">
+            <strong>🚀 Para la próxima clase:</strong> Trae 2 o 3 prompts que hayas creado y compartiremos cuáles funcionaron mejor.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVEGACIÓN -->
+  <section class="section section-sm" style="background: var(--bg-tertiary);">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+        <a href="../index.html" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Volver al inicio
+        </a>
+        <a href="clase2.html" class="btn btn-primary">
+          Siguiente clase
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo" style="background: var(--accent-soft); border-radius: var(--radius-md); padding: 10px;">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="var(--accent-dark)" stroke-width="1.5"/>
+          <path d="M12 7V17M7 12H17M9.5 9.5L14.5 14.5M14.5 9.5L9.5 14.5" stroke="var(--accent-dark)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="var(--accent-dark)"/>
+        </svg>
+        <div class="footer-brand">Liceo San Nicolás</div>
+        <div class="footer-info">
+          Clase de Inteligencia Artificial · Tecn. en Industria 4.0 · Clase 1<br>
+          <strong>Prof. Christopher Ruiz</strong>
+        </div>
+        <div class="footer-credit">
+          Material educativo para uso institucional.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/utils.js"></script>
+</body>
+</html>

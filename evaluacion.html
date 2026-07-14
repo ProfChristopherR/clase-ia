@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación Final - Introducción a la IA | Liceo San Nicolás</title>
+  <meta name="description" content="Evaluación final del curso introductorio de Inteligencia Artificial del Liceo San Nicolás.">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: var(--accent-soft); border-radius: var(--radius-sm); padding: 8px;">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="var(--accent-dark)" stroke-width="1.5"/>
+          <path d="M12 7V17M7 12H17M9.5 9.5L14.5 14.5M14.5 9.5L9.5 14.5" stroke="var(--accent-dark)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="var(--accent-dark)"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">Liceo San Nicolás</span>
+          <span class="brand-sub">Clase de IA · Tecn. en Industria 4.0</span>
+        </div>
+      </a>
+
+      <div class="navbar-nav" id="main-nav">
+        <a href="clases/clase1.html" class="nav-link">Clase 1</a>
+        <a href="clases/clase2.html" class="nav-link">Clase 2</a>
+        <a href="evaluacion.html" class="nav-link active">Evaluación</a>
+      </div>
+
+      <div class="navbar-actions">
+        <button class="theme-toggle" aria-label="Cambiar tema" title="Cambiar entre tema claro y oscuro">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="min-height: 50vh; padding-top: 100px;">
+    <div class="hero-bg" style="background: radial-gradient(circle at 20% 30%, var(--accent-soft), transparent 40%), radial-gradient(circle at 80% 70%, var(--info-soft), transparent 40%);"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span style="font-size: 1.2rem;">✅</span>
+        Evaluación Final
+      </div>
+      <h1 class="hero-title display" style="font-size: clamp(2rem, 4vw, 3.2rem);">
+        Pon a prueba tus <span class="accent">conocimientos</span>
+      </h1>
+      <p class="body-lg" style="margin-bottom: var(--space-xl);">
+        Responde las 8 preguntas sobre las dos clases de Inteligencia Artificial.
+      </p>
+    </div>
+  </section>
+
+  <!-- CUESTIONARIO -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="page-header reveal">
+        <h2 class="heading-xl">Cuestionario</h2>
+        <p>Selecciona la mejor respuesta para cada pregunta.</p>
+      </div>
+
+      <form id="quiz-form" class="reveal">
+        <!-- Pregunta 1 -->
+        <div class="quiz-question">
+          <p>1. ¿Qué es la Inteligencia Artificial?</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" data-correct="true"> La capacidad de una máquina para imitar funciones que requieren inteligencia humana.</label>
+            <label><input type="radio" name="q1" data-correct="false"> Un robot humanoide con emociones y consciencia.</label>
+            <label><input type="radio" name="q1" data-correct="false"> Un programa que solo resuelve operaciones matemáticas.</label>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="quiz-question">
+          <p>2. ¿Qué hace especial a la IA generativa?</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" data-correct="false"> Analiza grandes cantidades de datos muy rápido.</label>
+            <label><input type="radio" name="q2" data-correct="true"> Puede crear contenido nuevo como textos, imágenes o código.</label>
+            <label><input type="radio" name="q2" data-correct="false"> Solo clasifica fotos en categorías.</label>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="quiz-question">
+          <p>3. Según la fórmula R + C + O, la "C" representa:</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" data-correct="false"> Creatividad.</label>
+            <label><input type="radio" name="q3" data-correct="true"> Contexto.</label>
+            <label><input type="radio" name="q3" data-correct="false"> Código.</label>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="quiz-question">
+          <p>4. ¿Qué comando puedes usar en Gemini para acceder directamente a tus documentos de Drive?</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q4" data-correct="false"> #Drive</label>
+            <label><input type="radio" name="q4" data-correct="true"> @Drive</label>
+            <label><input type="radio" name="q4" data-correct="false"> /Docs</label>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="quiz-question">
+          <p>5. ¿Qué distingue principalmente a un agente de IA de un chatbot?</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q5" data-correct="true"> El agente puede actuar de forma autónoma para cumplir objetivos.</label>
+            <label><input type="radio" name="q5" data-correct="false"> El chatbot es más caro que un agente.</label>
+            <label><input type="radio" name="q5" data-correct="false"> El agente solo funciona en español.</label>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="quiz-question">
+          <p>6. ¿Cuál de estas es una plataforma gratuita recomendada para practicar código?</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q6" data-correct="true"> Replit</label>
+            <label><input type="radio" name="q6" data-correct="false"> Microsoft Word</label>
+            <label><input type="radio" name="q6" data-correct="false"> Paint</label>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="quiz-question">
+          <p>7. ¿Para qué sirve principalmente GitHub Copilot?</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q7" data-correct="false"> Para descargar videojuegos.</label>
+            <label><input type="radio" name="q7" data-correct="false"> Para enviar correos electrónicos.</label>
+            <label><input type="radio" name="q7" data-correct="true"> Para ayudar a los programadores a escribir código.</label>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="quiz-question">
+          <p>8. ¿Qué debemos hacer con la información que genera la IA?</p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q8" data-correct="true"> Verificarla, porque puede contener errores o información inventada.</label>
+            <label><input type="radio" name="q8" data-correct="false"> Usarla sin revisar, porque la IA nunca se equivoca.</label>
+            <label><input type="radio" name="q8" data-correct="false"> Ignorarla, porque no sirve para nada.</label>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg btn-check-quiz ripple">
+          Revisar respuestas
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </button>
+      </form>
+
+      <div class="quiz-result alert-box alert-info" style="display: none; margin-top: var(--space-xl);"></div>
+
+      <div style="display: flex; justify-content: center; margin-top: var(--space-xl);">
+        <a href="index.html" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo" style="background: var(--accent-soft); border-radius: var(--radius-md); padding: 10px;">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="var(--accent-dark)" stroke-width="1.5"/>
+          <path d="M12 7V17M7 12H17M9.5 9.5L14.5 14.5M14.5 9.5L9.5 14.5" stroke="var(--accent-dark)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="var(--accent-dark)"/>
+        </svg>
+        <div class="footer-brand">Liceo San Nicolás</div>
+        <div class="footer-info">
+          Clase de Inteligencia Artificial · Tecn. en Industria 4.0 · Evaluación Final<br>
+          <strong>Prof. Christopher Ruiz</strong>
+        </div>
+        <div class="footer-credit">
+          Material educativo para uso institucional.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/utils.js"></script>
+</body>
+</html>

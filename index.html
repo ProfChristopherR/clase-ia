@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducción a la Inteligencia Artificial | Liceo San Nicolás</title>
+  <meta name="description" content="Curso introductorio de Inteligencia Artificial para Tecnología en Industria 4.0: IA generativa, Gemini, agentes de IA y programación con IA.">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: var(--accent-soft); border-radius: var(--radius-sm); padding: 8px;">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="var(--accent-dark)" stroke-width="1.5"/>
+          <path d="M12 7V17M7 12H17M9.5 9.5L14.5 14.5M14.5 9.5L9.5 14.5" stroke="var(--accent-dark)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="var(--accent-dark)"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">Liceo San Nicolás</span>
+          <span class="brand-sub">Clase de IA · Tecn. en Industria 4.0</span>
+        </div>
+      </a>
+
+      <div class="navbar-nav" id="main-nav">
+        <a href="clases/clase1.html" class="nav-link">Clase 1</a>
+        <a href="clases/clase2.html" class="nav-link">Clase 2</a>
+        <a href="evaluacion.html" class="nav-link">Evaluación</a>
+      </div>
+
+      <div class="navbar-actions">
+        <button class="theme-toggle" aria-label="Cambiar tema" title="Cambiar entre tema claro y oscuro">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / PORTADA -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg" style="background: radial-gradient(circle at 30% 30%, var(--accent-soft), transparent 40%), radial-gradient(circle at 70% 70%, var(--info-soft), transparent 40%);"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span style="font-size: 1.2rem;">🤖</span>
+        Liceo San Nicolás · Tecnología en Industria 4.0
+      </div>
+      <h1 class="hero-title display">
+        Inteligencia Artificial: <span class="accent">de la teoría a la práctica</span>
+      </h1>
+      <p class="hero-subtitle heading-lg text-muted">
+        Aprende a usar IA como copiloto en tu estudio y trabajo
+      </p>
+      <p class="body-lg" style="margin-bottom: var(--space-xl);">
+        Curso introductorio donde aprenderás qué es la IA, cómo funciona la <strong>IA generativa</strong>, cómo sacarle el máximo provecho a <strong>Gemini</strong>, qué son los <strong>agentes de IA</strong> y cómo <strong>programar con ayuda de inteligencia artificial</strong>.
+      </p>
+      <div class="hero-professor">
+        <span class="label">Docente</span>
+        <span style="font-weight: 600;">Prof. Christopher Ruiz</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#clases" class="btn btn-primary btn-lg btn-shimmer ripple">
+          Comenzar el curso
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="evaluacion.html" class="btn btn-secondary btn-lg">
+          Evaluación Final
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </a>
+      </div>
+    </div>
+    <a href="#clases" class="hero-scroll" aria-label="Desplazarse hacia abajo">
+      <span>Explorar contenido</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- CLASES -->
+  <section class="section" id="clases">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom: var(--space-2xl);">
+        <p class="body-lg" style="color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem;">Contenido del Curso</p>
+        <h2 class="heading-xl" style="margin-bottom: var(--space-md);">2 Clases para Dominar la IA</h2>
+        <p class="body-lg" style="max-width: 650px; margin: 0 auto;">
+          Material práctico con fundamentos sólidos, ejemplos del día a día, dinámicas de clase y ejercicios con Gemini.
+        </p>
+      </div>
+
+      <div class="classes-grid">
+        <!-- Clase 1 -->
+        <a href="clases/clase1.html" class="class-card reveal reveal-delay-1 glow-card">
+          <div class="class-card-icon">🧠</div>
+          <h3>Clase 1</h3>
+          <p class="heading-md" style="margin-bottom: var(--space-sm); color: var(--text-primary);">Fundamentos de la IA y el arte del Prompt</p>
+          <p>Qué es la IA, IA generativa, Machine Learning, Gemini y la fórmula R + C + O para crear prompts efectivos. Con dinámicas y ejercicios prácticos.</p>
+          <span class="btn btn-ghost" style="margin-top: auto;">
+            Ver clase
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <!-- Clase 2 -->
+        <a href="clases/clase2.html" class="class-card reveal reveal-delay-2 glow-card">
+          <div class="class-card-icon">🚀</div>
+          <h3>Clase 2</h3>
+          <p class="heading-md" style="margin-bottom: var(--space-sm); color: var(--text-primary);">Gemini en Workspace, Agentes y Código con IA</p>
+          <p>Uso de Gemini en Gmail, Docs, Sheets y Slides; agentes de IA autónomos; programación con IA y plataformas gratuitas como Replit y CodePen.</p>
+          <span class="btn btn-ghost" style="margin-top: auto;">
+            Ver clase
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <!-- Evaluación -->
+        <a href="evaluacion.html" class="class-card reveal reveal-delay-3 glow-card" style="border: 2px solid var(--accent);">
+          <div class="class-card-icon" style="background: linear-gradient(135deg, var(--accent-dark), var(--accent)); color: white;">✅</div>
+          <h3>Evaluación Final</h3>
+          <p class="heading-md" style="margin-bottom: var(--space-sm); color: var(--text-primary);">Cuestionario Integrador</p>
+          <p>Pon a prueba tus conocimientos con 8 preguntas de ambas clases y recibe retroalimentación inmediata.</p>
+          <span class="btn btn-primary" style="margin-top: auto;">
+            Iniciar evaluación
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO DOCENTE -->
+  <section class="section" style="background: var(--bg-tertiary);">
+    <div class="container">
+      <div class="text-center reveal">
+        <p class="body-lg" style="color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem;">Instructor</p>
+        <h2 class="heading-xl" style="margin-bottom: var(--space-md);">Prof. Christopher Ruiz</h2>
+        <p class="body-lg" style="max-width: 600px; margin: 0 auto var(--space-xl);">
+          Tecnología en Industria 4.0<br>
+          Liceo San Nicolás
+        </p>
+        <div style="display: flex; gap: var(--space-lg); justify-content: center; flex-wrap: wrap;">
+          <div class="card" style="padding: var(--space-xl); text-align: center; min-width: 200px;">
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); font-family: var(--font-heading);">2</div>
+            <div class="text-muted">Clases completas</div>
+          </div>
+          <div class="card" style="padding: var(--space-xl); text-align: center; min-width: 200px;">
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); font-family: var(--font-heading);">10+</div>
+            <div class="text-muted">Dinámicas y ejercicios</div>
+          </div>
+          <div class="card" style="padding: var(--space-xl); text-align: center; min-width: 200px;">
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); font-family: var(--font-heading);">100%</div>
+            <div class="text-muted">Práctico y aplicable</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo" style="background: var(--accent-soft); border-radius: var(--radius-md); padding: 10px;">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="var(--accent-dark)" stroke-width="1.5"/>
+          <path d="M12 7V17M7 12H17M9.5 9.5L14.5 14.5M14.5 9.5L9.5 14.5" stroke="var(--accent-dark)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="var(--accent-dark)"/>
+        </svg>
+        <div class="footer-brand">Liceo San Nicolás</div>
+        <div class="footer-info">
+          Clase de Inteligencia Artificial · Tecnología en Industria 4.0<br>
+          <strong>Prof. Christopher Ruiz</strong>
+        </div>
+        <div class="footer-credit">
+          Material educativo para uso institucional.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/utils.js"></script>
+</body>
+</html>
