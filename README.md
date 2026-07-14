@@ -1,6 +1,6 @@
 # Clase de Inteligencia Artificial — Liceo San Nicolás
 
-Sitio web educativo con dos clases introductorias sobre Inteligencia Artificial, diseñado para el ramo **Tecnología Geografía** del Departamento de Historia y Geografía. Incluye fundamentos, dinámicas de clase, ejercicios prácticos con Gemini y una evaluación final.
+Sitio web educativo con dos clases introductorias sobre Inteligencia Artificial, diseñado para el ramo **Tecnología Geogo** del Departamento de Historia y Geografía. Incluye fundamentos, dinámicas de clase, ejercicios prácticos con Gemini y una evaluación final.
 
 ## 📂 Estructura del sitio
 
@@ -85,5 +85,5 @@ El contenido sobre prompting y capacidades de Gemini se enriqueció con ideas de
 ---
 
 **Docente:** Prof. Christopher Ruiz  
-**Asignatura:** Tecnología Geografía  
+**Asignatura:** Tecnología Geogo  
 **Institución:** Liceo San Nicolás
